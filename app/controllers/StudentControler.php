@@ -18,6 +18,11 @@ class StudentController
 
     }
 
+    public function show(string $id)
+    {
+        echo 'Detail Siswa';
+        echo "<p>Menampilkan detail siswa dengan ID: [$id] </p>";
+    }
 
 }
 
