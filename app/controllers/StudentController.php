@@ -8,20 +8,18 @@ class StudentController
 
     public function index()
     {
-        echo '<h1>Daftar Siswa</h1>';
+        require_once '../app/views/students/index.php';
 
-            echo '<p>Menampilkan daftar siswa.</p>';
     }
 
     public function create()
     {
-
+        require_once '../app/views/students/create.php';
     }
 
     public function show(string $id)
     {
-        echo 'Detail Siswa';
-        echo "<p>Menampilkan detail siswa dengan ID: [$id] </p>";
+        require_once '../app/views/students/show.php';
     }
 
 }

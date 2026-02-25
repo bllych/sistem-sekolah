@@ -21,43 +21,40 @@ class Router
     }
 
     public function run()
-    {
-        // Routing logic goes here
-        $method =  $_SERVER['REQUEST_METHOD'];
-        $uri = parse_url($_SERVER['REQUEST_URI'],  PHP_URL_PATH);
-        
-        
-        foreach ($this->routes as $route) {
-            $pattern = str_replace(
-                '{id}',
-                '([0-9]+)',
-                $route['uri'],
-            );
+{
+    // Routing logic goes here
+    $method = $_SERVER['REQUEST_METHOD'];
+    $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+
+    foreach ($this->routes as $route) {
+
+        $pattern = str_replace(
+            '{id}',
+            '([0-9]+)',
+            $route['uri']
+        );
+
+        $pattern = '#^' . $pattern . '$#';
+
+        // Example: /student/([0-9]+)
+
+        if ($method === $route['method'] && preg_match($pattern, $uri, $matches)) {
+
+            require_once '../app/controllers/' . $route['controller'] . '.php';
+
+            $controllerClass = 'App\\Controllers\\' . $route['controller'];
+            $controller = new $controllerClass();
+            $function = $route['function'];
+
+            array_shift($matches); // remove full match
+
+            call_user_func_array([$controller, $function], $matches);
+
+            return;
         }
+    }
 
-            $pattern = '#^' . $pattern . '$#';
-            // /student/([o-9]+)
-            
-
-            if (preg_match($pattern, $uri, $matches)) {
-                require_once '../app/controllers/' . $route['controller'] . '.php';
-
-                $controllerClass = 'App\\Controllers\\' . $route['controller'];
-                $controller = new $controllerClass();
-                $function = $route['function'];
-
-                call_user_func_array([$controller, $function], $matches);
-
-                //shortcut: index($parameter), $parameter2, dst);
-
-                //example: call_user_func_array([$controller, 'index'], [1,2]);
-
-                return;
-            
-            }
-    
-        http_response_code(404); 
-        echo '<h1>404 - Page Not Found</h1>';
-        
+    http_response_code(404);
+    echo '<h1>404 - Page Not Found</h1>';
 }
 }
