@@ -1,68 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detail Siswa</title>
-    <link rel="stylesheet" href="/css/output.css">
-</head>
-<body class="flex flex-col min-h-screen bg-gray-100">
-    <!-- Header Start -->
-    <header class="bg-blue-500 text-white">
-        <div class="flex items-center justify-between container mx-auto p-4">
-            <a class="font-bold" href="/students">Sistem Sekolah</a>
-            <a class="py-2 px-4 bg-white text-blue-500 rounded-3xl" href="/students/create">+ Tambah Siswa</a>
+<div class="mt-2 space-y-4">
+    <!-- Cari Header Start -->
+    <div class="bg-gray-500 shadow p-4 rounded-lg text-amber-50">
+        <h1 class="font-bold text-black text-4xl">Edit Siswa</h1>
+        <p>Melakukan perubahan data siswa yang terdaftar</p>
+    </div>
+    <!-- Cari Header End -->
 
+    <!-- Card Content Start -->
+    <div class="bg-gray-10 pz-4 rounded-lg shadow mt-2 ">
+        <div class="p-4 grid grid-cols-2 gap-4">
+            <div class="space-y-2">
+                <label class="font-bold block" for="name">Nama</label>
+                <input type="text" id="name" name="name" placeholder="Masukkan nama" readonly
+                    class="border rounded-lg px-4 py-2 w-full">
+            </div>
+            <div class="space-y-2">
+                <label class="font-bold block" for="kelas">Kelas</label>
+                <input type="text" id="kelas" kelas="kelas" placeholder="Masukkan Kelas" readonly
+                    class="border rounded-lg px-4 py-2 w-full">
+            </div>
+            <div class="space-y-2">
+                <label class="font-bold block" for="nis">NIS</label>
+                <input type="text" id="nis" nis="nis" placeholder="Masukkan NIS" readonly
+                    class="border rounded-lg px-4 py-2 w-full">
+            </div>
+            <div class="space-y-2">
+                <label class="font-bold block" for="phone_number">No. Telepon</label>
+                <input type="text" id="phone_number" phone_number="phone_number" readonly
+                    placeholder="Masukkan Nomor Telepon" class="border rounded-lg px-4 py-2 w-full">
+            </div>
+
+            <div class="flex justify-end gap-4 col-span-2">
+                <a href="/student" class="border px-4 py-2 rounded-lg bg-gray-500 text-black">Kembali</a>
+                <button type="submit" class="border px-3 py-2 rounded-lg text-white bg-blue-400">Simpan</button>
+            </div>
         </div>
-    </header>
-
-    <!-- Header End -->
-    
-    <!-- Main Start -->
-     <main class="grow container mx-auto">
-        <div class="mt-8 space-y-4">
-            <!-- Card Header Start -->
-             <div class="bg-white shadow p-4 rounded-lg">
-                <h1 class="font-bold text-2xl">Edit Siswa</h1>
-                <p>Melakukan perubahan data siswa yang terdaftar</p>
-             </div>
-            <!-- Card Header End -->
-            
-            <!-- Card Content Start -->
-             <div class="bg-white rounded-lg shadow">
-                <div class="p-4 grid grid-cols-2 gap-4">
-                    <div class="space-y-2">
-                        <label class="font-bold block" for="name">Nama</label>
-                        <input class="px-4 py-2 border rounded-lg w-full" type="text" id="name" name="name" placeholder="Masukkan nama" readonly>
-                    </div>
-                    <div class="space-y-2">
-                        <label class="font-bold block" for="nis">NIS</label>
-                        <input class="px-4 py-2 border rounded-lg w-full" type="text" id="nis" name="nis" placeholder="Masukkan NIS" readonly>
-                    </div>
-                    <div class="space-y-2">
-                        <label class="font-bold block" for="class">Kelas</label>
-                        <input class="px-4 py-2 border rounded-lg w-full" type="text" id="class" name="class" placeholder="Masukkan kelas" readonly>
-                    </div>
-                    <div class="space-y-2">
-                        <label class="font-bold block" for="phone-number">Nomor Telepon</label>
-                        <input class="px-4 py-2 border rounded-lg w-full" type="text" id="phone-number" name="phone-number" placeholder="Masukkan nomor telepon" readonly>
-                    </div>
-                    <div class="flex justify-end gap-4 col-span-2">
-                        <a href="/students" class="px-4 py-2 rounded-lg bg-gray-400">Kembali</a>
-                    </div>
-                    
-                </div>
-             </div>
-            <!-- Card Content End -->
-        </div>
-     </main>
-    <!-- Main End -->
-
-    <!-- Footer Start -->
-    <footer class="bg-gray-800 text-white p-4 text-center">
-        2026 - SMK Kristen Immanuel Pontianak - Sistem Sekolah
-    </footer>
-    <!-- Footer End -->
-
-</body>
-</html>
+    </div>
+    <!-- Card Content End -->
+</div>
