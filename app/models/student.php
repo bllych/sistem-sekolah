@@ -14,7 +14,8 @@ class Student extends Database
     {
         $students = [];
         
-        $query = "SELECT * FROM {this->table}";
+
+        $query = "SELECT * FROM {$this->table}";
         $stmt = $this->connection->prepare($query);
         $stmt->execute();
 

@@ -1,8 +1,8 @@
 <div class="mt-2 space-y-4">
     <!-- Cari Header Start -->
-    <div class="bg-gray-500 shadow p-4 rounded-lg text-amber-50">
+    <div class="border shadow p-4 rounded-lg text-amber-50">
         <h1 class="font-bold text-black text-4xl">Edit Siswa</h1>
-        <p>Melakukan perubahan data siswa yang terdaftar</p>
+        <p class="text-black">Melakukan perubahan data siswa yang terdaftar</p>
     </div>
     <!-- Cari Header End -->
 
@@ -31,7 +31,7 @@
             </div>
 
             <div class="flex justify-end gap-4 col-span-2">
-                <a href="/student" class="border px-4 py-2 rounded-lg bg-gray-500 text-black">Kembali</a>
+                <a href="/student" class="border px-4 py-2 rounded-lg shadow text-black">Kembali</a>
                 <button type="submit" class="border px-3 py-2 rounded-lg text-white bg-blue-400">Simpan</button>
             </div>
         </div>

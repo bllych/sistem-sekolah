@@ -31,7 +31,7 @@
                     </div>
 
                     <div class="flex justify-end gap-4 col-span-2">
-                        <a href="/students" class="px-4 py-2 rounded-lg bg-gray-500 text-black font-bold">Kembali</a>
+                        <a href="/students" class="px-4 py-2 rounded-lg border text-black font-bold">Kembali</a>
                         <button type="submit" class=" px-3 py-2 rounded-lg text-white bg-blue-400 font-bold">Simpan</button>
                     </div>
                 </div>
