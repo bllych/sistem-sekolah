@@ -45,5 +45,25 @@ class Student extends Database
 
     }
 
+    public function insert(array $data)
+    {
+        $name = htmlspecialchars($data['name']);
+        $nis = htmlspecialchars($data['nis']);
+        $email = htmlspecialchars($data['email']);
+        $phoneNumber = htmlspecialchars($data['phone_number']);
+
+        $query = "INSERT INTO {$this->table} (name, nis, email, phone_number) VALUES (?, ?, ?, ?)";
+
+        $stmt = $this->connection->prepare($query);
+        $stmt->bind_param("ssss", $name, $nis, $email, $phoneNumber);
+        $stmt->execute();
+
+        if ($stmt->affected_rows > 0) {
+            header('Location: /students');
+            exit;
+        } else {
+            echo "Error to store student.";
+        }
+    }
 }
 ?>
