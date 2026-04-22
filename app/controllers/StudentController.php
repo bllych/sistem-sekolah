@@ -51,9 +51,18 @@ class StudentController extends Controller
         header('Location: /students');
     }
 
+    public function update(string $id)
+    {
+        $id = intval($id);
+        $studentModel = new Student();
+        $studentModel->update($_POST, $id);
+    }
 
-
-
+       public function destroy(string $id)
+    {
+        $id = intval($id);
+        $studentModel = new Student();
+        $studentModel->delete($id);
+    }
 }
-
 ?>
